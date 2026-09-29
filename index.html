@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate Hub · Restaurant Templates · The Artistic Unity</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f6f8fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8rem;
+      color: #1a1f2e;
+      line-height: 1.5;
+    }
+
+    .card {
+      max-width: 780px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 3rem 2.8rem;
+      box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    }
+
+    @media (max-width: 500px) {
+      .card { padding: 2rem 1.5rem; border-radius: 1.8rem; }
+    }
+
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: #0b1424;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #2b3550;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #eef2f7;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.8rem;
+    }
+
+    .commission-badge {
+      display: inline-block;
+      background: #eef3fc;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1a3b7a;
+      letter-spacing: 0.02em;
+      border: 1px solid #d8e3f5;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 2.2rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eef2f7;
+    }
+
+    .section-head:first-of-type { margin-top: 0; }
+
+    .section-head .marker {
+      flex: 0 0 auto;
+      width: 0.55rem;
+      height: 1.3rem;
+      border-radius: 4px;
+      background: #3b6bcf;
+    }
+
+    .section-head h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0b1424;
+    }
+
+    .plain { font-size: 0.98rem; color: #2b3550; margin-bottom: 0.8rem; }
+
+    .link-box {
+      background: #f8fafd;
+      border: 1px solid #e4ebf5;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
+      word-break: break-all;
+      font-size: 0.92rem;
+      color: #1f3b7a;
+      font-weight: 500;
+    }
+
+    .link-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #7a86a0;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #1a3b7a;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      border-radius: 60px;
+      border: 1px solid #1a3b7a;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 6px 18px -8px rgba(26, 59, 122, 0.4);
+      margin-top: 0.5rem;
+    }
+
+    .cta:hover { background: #0b1f4a; border-color: #0b1f4a; transform: translateY(-1px); }
+
+    .cta-note { font-size: 0.8rem; color: #7a86a0; text-align: center; margin-top: 0.5rem; }
+
+    .steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      background: #ffffff;
+      border: 1px solid #e4ebf5;
+      border-left: 4px solid #3b6bcf;
+      border-radius: 1rem;
+      padding: 0.9rem 1.2rem;
+      font-size: 0.95rem;
+      color: #2b3550;
+    }
+
+    .steps .num {
+      flex: 0 0 auto;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      background: #eef3fc;
+      border: 1px solid #e2eaf5;
+      color: #1f3b7a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+
+    .pitch-block {
+      background: #f2f3f2;
+      color: #000306;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .pitch-block::before {
+      content: "“";
+      color: #6f9bff;
+      font-size: 1.4rem;
+      line-height: 0;
+      vertical-align: -0.3em;
+      margin-right: 3px;
+    }
+
+    .pitch-block::after {
+      content: "”";
+      color: #6f9bff;
+      font-size: 1.4rem;
+      line-height: 0;
+      vertical-align: -0.45em;
+      margin-left: 3px;
+    }
+
+    .qa-card {
+      background: #ffffff;
+      border: 1px solid #e4ebf5;
+      border-radius: 1rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .qa-card .q {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: #0b1b3a;
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .qa-card .q .badge {
+      flex: 0 0 auto;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      background: #3b6bcf;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      margin-top: 0.15rem;
+    }
+
+    .qa-card .a {
+      font-size: 0.92rem;
+      color: #55617d;
+      border-top: 1px dashed #e4ebf5;
+      padding-top: 0.5rem;
+    }
+
+    .qa-card .a ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 0.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .qa-card .a ul li {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+
+    .qa-card .a ul li::before {
+      content: "•";
+      color: #3b6bcf;
+      font-weight: 700;
+    }
+
+    .fine-print {
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: #7a86a0;
+      border-top: 1px solid #e9eef6;
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Affiliate Hub</h1>
+
+    <div class="subhead">
+      Sell Restaurant Templates. Earn
+      <span class="commission-badge">$24.50 per sale · 50% commission</span>
+    </div>
+
+    <!-- 1. YOUR LINKS -->
+    <div class="section-head">
+      <span class="marker"></span>
+      <h2>Your Links</h2>
+    </div>
+    <div class="link-box">
+      <span class="link-label">Your Affiliate Link</span>
+      https://copecart.com/us/products/b2eab0b2/p/[YOUR_USERNAME]/
+    </div>
+    <div class="link-box">
+      <span class="link-label">Product Sales Page</span>
+      https://restaurant-templates-inky.vercel.app/
+    </div>
+    <div class="link-box">
+      <span class="link-label">Main Website</span>
+      https://www.theartisticunity.art/
+    </div>
+
+    <!-- 2. THE PITCH -->
+    <div class="section-head">
+      <span class="marker"></span>
+      <h2>The Pitch — Use This</h2>
+    </div>
+    <div class="pitch-block">
+      We build social media templates for restaurants that actually look professional. No design skills needed. 29 ready-to-use Canva templates — feed posts and stories — covering everything from daily specials to seasonal menus. Reusable forever. One-time payment of $49.
+    </div>
+
+    <!-- 3. WHO TO SELL TO -->
+    <div class="section-head">
+      <span class="marker"></span>
+      <h2>Who To Sell To</h2>
+    </div>
+    <ul class="steps">
+      <li><span class="num">1</span> Restaurant owners who post on Instagram or Facebook (or want to).</li>
+      <li><span class="num">2</span> Cafes, bistros, food trucks, and small eateries.</li>
+      <li><span class="num">3</span> Any food business that wants to look professional without hiring a designer.</li>
+    </ul>
+
+    <!-- 4. WHAT THE CLIENT GETS -->
+    <div class="section-head">
+      <span class="marker"></span>
+      <h2>What The Client Gets</h2>
+    </div>
+    <ul class="steps">
+      <li><span class="num">✓</span> 29 templates — feed posts (1:1) + stories (9:16).</li>
+      <li><span class="num">✓</span> Editable Canva links — they swap text and photos.</li>
+      <li><span class="num">✓</span> Covers intro, offers, dishes, desserts, freshness, seasonal menus.</li>
+      <li><span class="num">✓</span> Reusable forever. $49 one-time.</li>
+    </ul>
+
+    <!-- 5. THE MONEY -->
+    <div class="section-head">
+      <span class="marker"></span>
+      <h2>The Money</h2>
+    </div>
+    <div class="qa-card">
+      <div class="q"><span class="badge">EARN</span> $24.50 per sale</div>
+      <div class="a">
+        50% commission on every sale. Paid directly by CopeCart. No waiting for us — the platform handles it.
+      </div>
+    </div>
+
+    <!-- 6. OBJECTION BUSTER -->
+    <div class="section-head">
+      <span class="marker"></span>
+      <h2>Objection Buster</h2>
+    </div>
+
+    <div class="qa-card">
+      <div class="q"><span class="badge">Q1</span> "Why should I sell this?"</div>
+      <div class="a">
+        <ul>
+          <li>Restaurants always need content.</li>
+          <li>No custom work — it's a digital product.</li>
+          <li>Instant delivery, no fulfillment stress.</li>
+          <li>Easy pitch: "Look professional on Instagram without a designer."</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="q"><span class="badge">Q2</span> "What if they don't know Canva?"</div>
+      <div class="a">
+        Templates come as Canva links. They click, edit, and download. No design skills needed. If they can type and add a photo, they can use this.
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="q"><span class="badge">Q3</span> "Is this a subscription?"</div>
+      <div class="a">
+        No. One-time payment of $49. They own the templates and can reuse them forever.
+      </div>
+    </div>
+
+    <!-- 7. HOW TO START -->
+    <div class="section-head">
+      <span class="marker"></span>
+      <h2>How To Start</h2>
+    </div>
+    <ul class="steps">
+      <li><span class="num">1</span> Send us your CopeCart username (if you haven't already).</li>
+      <li><span class="num">2</span> We add you as an affiliate and set your 50% commission.</li>
+      <li><span class="num">3</span> Grab your affiliate link and start sharing.</li>
+    </ul>
+    <a href="mailto:theartisticunity18@gmail.com?subject=Affiliate%20Application%20-%20Restaurant%20Templates&body=Hi%2C%20I%27m%20interested%20in%20promoting%20your%20restaurant%20templates.%0A%0AMy%20CopeCart%20username%3A%20%0A%0AThanks" class="cta">Apply as an Affiliate →</a>
+    <p class="cta-note">No salary. No cap. Pure commission — you earn what you sell.</p>
+
+    <!-- 8. CONTACT -->
+    <div class="section-head">
+      <span class="marker"></span>
+      <h2>Questions?</h2>
+    </div>
+    <div class="qa-card">
+      <div class="q">📧 Email</div>
+      <div class="a">theartisticunity18@gmail.com</div>
+    </div>
+    <div class="qa-card">
+      <div class="q">🌐 Website</div>
+      <div class="a">www.theartisticunity.art</div>
+    </div>
+
+    <div class="fine-print">
+      <span>© 2026 The Artistic Unity — Restaurant Templates</span>
+      <span>✦ 50% commission · instant delivery</span>
+    </div>
+  </div>
+</body>
+</html>
